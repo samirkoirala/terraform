@@ -11,3 +11,16 @@ module "docker_myapp"  {
   external_port = 3000
 }
 
+module "deploy-ng" {
+  source = "./modules/deploy-ng"
+  
+}
+
+module "deploy-ng1"  {
+  source = "./modules/deploy-ng"
+  name = "my-app"
+  image = "razzkumar/static:latest"
+  replicas = 1
+  port = 3000
+  
+}
